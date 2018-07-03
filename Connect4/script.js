@@ -166,10 +166,7 @@ function isNull(value){
 $("h5").text(currentName+": Its your turn to move")
 
 var flag = false;
-$(".board button").on("touchstart click", function(e){
-    //For touch precision in mobile devices
-    //e.stopPropagation(); e.preventDefault();
-    
+$(".board button").on("touchstart click", function(){
     var col = $(this).closest("td").index(); //gets the column in which the mouse was clicked.
 
     //list of all lowest free cells in each column
@@ -205,5 +202,6 @@ $(".board button").on("touchstart click", function(e){
         $("h5").text(currentName+": Its your turn to move")
         console.log("Next turn")
     }
-    return false;
+
+    return false;//for touch precision
 })
