@@ -114,14 +114,15 @@ $(".board button").on("click", function(){
     var col = $(this).closest("td").index();
 
     var bottomFree = getBottomRow(col)
-
+    console.log("Current turn", currentName)
     changeColor(bottomFree, col, currentcolor)
+    
+    setTimeout(function(){}, 10)
+    if (horizontalCheck() || verticalCheck() || diagonalCheck()) {
+        gameOver(currentName)
+    }
+    
     console.log("COlor changed")
-    setTimeout(function(){
-        if (horizontalCheck() || verticalCheck() || diagonalCheck()) {
-            gameOver(currentName)
-        }
-    }, 10)
     
 
     currentPlayer = currentPlayer * -1
