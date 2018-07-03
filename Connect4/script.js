@@ -168,7 +168,7 @@ $("h5").text(currentName+": Its your turn to move")
 var flag = false;
 $(".board button").on("touchstart click", function(e){
     //For touch precision in mobile devices
-    e.stopPropagation(); e.preventDefault();
+    //e.stopPropagation(); e.preventDefault();
     
     var col = $(this).closest("td").index(); //gets the column in which the mouse was clicked.
 
@@ -205,4 +205,5 @@ $(".board button").on("touchstart click", function(e){
         $("h5").text(currentName+": Its your turn to move")
         console.log("Next turn")
     }
+    return false;
 })
