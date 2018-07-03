@@ -81,6 +81,7 @@ function diagonalCheck(){
                 console.log("Diag")
                 console.log(row)
                 console.log(col)
+                return true
             } else {
                 one = getColor(row, col)
                 two = getColor(row - 1, col + 1)
