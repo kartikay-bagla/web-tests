@@ -103,7 +103,7 @@ var count = 0 //Number of turns in the game
 $("h5").text(currentValue + " to move!")
 
 //on clicking a cell
-$("td").on("click", function(){
+$("td").on("touchstart click", function(){
     var col = $(this).index();
     var row = $(this).closest("tr").index();
 
@@ -135,4 +135,5 @@ $("td").on("click", function(){
             }
         }
     }
+    return false; //for touch optimization
 })
